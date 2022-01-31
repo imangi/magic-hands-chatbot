@@ -64,6 +64,7 @@ let handleSetupProfileAPI = () => {
       );
     } catch (e) {
       reject(e);
+      console.log(e);
     }
   });
 };
