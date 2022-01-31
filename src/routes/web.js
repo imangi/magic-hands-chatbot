@@ -1,13 +1,14 @@
-const express = require('express');
-const homepageController = require( '../controllers/homepageControllers');
+const express = require("express");
+const homepageController = require("../controllers/homepageControllers");
 
 const router = express.Router();
 
 const initWebRoutes = (app) => {
-    router.get('/', homepageController.getHomepage);
-    router.get('/webhook', homepageController.getWebhook);
-    router.post('/webhook', homepageController.postWebhook)
-    return app.use('/', router)
+  router.get("/", homepageController.getHomepage);
+  router.get("/webhook", homepageController.getWebhook);
+  router.post("/webhook", homepageController.postWebhook);
+  router.post("/set-up-profile", homepageController.handleSetupProfile);
+  return app.use("/", router);
 };
 
 module.exports = initWebRoutes;

@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const request = require("request");
+const homepageService = require("../services/homepageService");
 
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
@@ -152,9 +153,18 @@ let callSendAPI = (sender_psid, response) => {
     }
   );
 };
+handleSetupProfile = async (req, res) => {
+  try {
+    await homepageService.handleSetupProfileAPI();
+    return res.redirect("/");
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 module.exports = {
   getHomepage: getHomepage,
   getWebhook: getWebhook,
   postWebhook: postWebhook,
+  handleSetupProfile: handleSetupProfile,
 };
