@@ -82,7 +82,7 @@ let handleSetupProfileAPI = () => {
     }
   });
 };
-handlePresetsAPI = () => {
+let handlePresetsAPI = () => {
   return new Promise((resolve, reject) => {
     try {
       let URL = `https://graph.facebook.com/v12.0/me/custom_user_settings?access_token=${PAGE_ACCESS_TOKEN}`;
