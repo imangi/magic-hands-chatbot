@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const PAGE_ACCESS_TOKEN = proccess.env.PAGE_ACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 let handleSetupProfileAPI = () => {
   return new Promise((resolve, reject) => {

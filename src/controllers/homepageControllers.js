@@ -153,7 +153,7 @@ let callSendAPI = (sender_psid, response) => {
     }
   );
 };
-handleSetupProfile = async (req, res) => {
+let handleSetupProfile = async (req, res) => {
   try {
     await homepageService.handleSetupProfileAPI();
     return res.redirect("/");
@@ -162,9 +162,14 @@ handleSetupProfile = async (req, res) => {
   }
 };
 
+let getSetUpProfilePage = (req, res) => {
+  return res.render("profile.ejs");
+};
+
 module.exports = {
   getHomepage: getHomepage,
   getWebhook: getWebhook,
   postWebhook: postWebhook,
   handleSetupProfile: handleSetupProfile,
+  getSetUpProfilePage: getSetUpProfilePage,
 };
