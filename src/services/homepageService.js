@@ -14,24 +14,36 @@ let handleSetupProfileAPI = () => {
           payload: "GET_STARTED",
         },
 
-        persistent_menu: [
+        data: [
           {
-            locale: "default",
-            composer_input_disabled: false,
-            call_to_actions: [
+            user_level_persistent_menu: [
               {
-                type: "postback",
-                title: "Talk to an agent",
-                payload: "TALK_AGENT",
+                locale: "default",
+                composer_input_disabled: false,
+                call_to_actions: [
+                  {
+                    type: "postback",
+                    title: "Talk to an agent",
+                    payload: "CARE_HELP",
+                  },
+                  {
+                    type: "postback",
+                    title: "Restart this conversation",
+                    payload: "RESTART_CONVERSATION",
+                  },
+                  {
+                    type: "web_url",
+                    title: "Google",
+                    url: "https://www.google.com/",
+                    webview_height_ratio: "full",
+                  },
+                ],
               },
+            ],
+            page_level_persistent_menu: [
               {
-                type: "postback",
-                title: "Restart this conversation",
-                payload: "RESTART_CONVERSATION",
-              },
-              {
-                type: "nested",
-                title: "More info",
+                locale: "default",
+                composer_input_disabled: false,
                 call_to_actions: [
                   {
                     type: "web_url",
@@ -55,6 +67,7 @@ let handleSetupProfileAPI = () => {
         },
         (err, res, body) => {
           if (!err) {
+            console.log(body);
             resolve("done");
           } else {
             reject("Unable to send message:" + err);
