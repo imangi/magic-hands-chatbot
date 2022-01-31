@@ -9,6 +9,7 @@ const initWebRoutes = (app) => {
   router.post("/webhook", homepageController.postWebhook);
   router.post("/set-up-profile", homepageController.handleSetupProfile);
   router.get("/set-up-profile", homepageController.getSetUpProfilePage);
+
   return app.use("/", router);
 };
 
