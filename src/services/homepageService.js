@@ -55,10 +55,10 @@ let handleSetupProfileAPI = () => {
         },
         (err, res, body) => {
           if (!err) {
+            resolve("done");
+          } else {
             reject("Unable to send message:" + err);
             console.log(err);
-          } else {
-            resolve("done");
           }
         }
       );
