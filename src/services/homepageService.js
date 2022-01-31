@@ -22,18 +22,24 @@ let handleSetupProfileAPI = () => {
               {
                 type: "postback",
                 title: "Talk to an agent",
-                payload: "CARE_HELP",
+                payload: "TALK_AGENT",
               },
               {
                 type: "postback",
-                title: "Outfit suggestions",
-                payload: "CURATION",
+                title: "Restart this conversation",
+                payload: "RESTART_CONVERSATION",
               },
               {
-                type: "web_url",
-                title: "Shop now",
-                url: "https://www.originalcoastclothing.com/",
-                webview_height_ratio: "full",
+                type: "nested",
+                title: "More info",
+                call_to_actions: [
+                  {
+                    type: "web_url",
+                    title: "View Facebook Fan Page",
+                    url: "https://www.facebook.com/thesriatelier",
+                    webview_height_ratio: "full",
+                  },
+                ],
               },
             ],
           },
