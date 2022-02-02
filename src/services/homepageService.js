@@ -13,28 +13,44 @@ let handleSetupProfileAPI = () => {
         get_started: {
           payload: "GET_STARTED",
         },
-
-        persistent_menu: [
+        data: [
           {
-            locale: "default",
-            composer_input_disabled: false,
-            call_to_actions: [
+            user_level_persistent_menu: [
               {
-                type: "postback",
-                title: "Talk to an agent",
-                payload: "TALK_AGENT",
+                locale: "default",
+                composer_input_disabled: false,
+                call_to_actions: [
+                  {
+                    type: "postback",
+                    title: "Talk to an agent",
+                    payload: "TALK_AGENT",
+                  },
+                  {
+                    type: "postback",
+                    title: "Restart this conversation",
+                    payload: "RESTART_CONVERSATION",
+                  },
+                  {
+                    type: "web_url",
+                    title: "View Facebook Fan Page",
+                    url: "https://www.facebook.com/thesriatelier",
+                    webview_height_ratio: "full",
+                  },
+                ],
               },
+            ],
+            page_level_persistent_menu: [
               {
-                type: "postback",
-                title: "Restart this conversation",
-                payload: "RESTART_CONVERSATION",
-              },
-              {
-                type: "web_url",
-                title: "View Facebook Fan Page",
-                url: "https://www.facebook.com/haryphamdev",
-                webview_height_ratio: "full",
-              },
+                locale: "default",
+                composer_input_disabled: false,
+                call_to_actions: [
+                   {
+                  type: "postback",
+                  title: "Review the page",
+                  payload: "REVIEW",
+                  }
+                ]
+              }
             ],
           },
         ],
