@@ -44,13 +44,13 @@ let handleSetupProfileAPI = () => {
                 locale: "default",
                 composer_input_disabled: false,
                 call_to_actions: [
-                   {
-                  type: "postback",
-                  title: "Review the page",
-                  payload: "REVIEW",
-                  }
-                ]
-              }
+                  {
+                    type: "postback",
+                    title: "Review the page",
+                    payload: "REVIEW",
+                  },
+                ],
+              },
             ],
           },
         ],
