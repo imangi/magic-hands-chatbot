@@ -13,43 +13,26 @@ let handleSetupProfileAPI = () => {
         get_started: {
           payload: "GET_STARTED",
         },
-        data: [
+        persistent_menu: [
           {
-            user_level_persistent_menu: [
+            locale: "default",
+            composer_input_disabled: false,
+            call_to_actions: [
               {
-                locale: "default",
-                composer_input_disabled: false,
-                call_to_actions: [
-                  {
-                    type: "postback",
-                    title: "Talk to an agent",
-                    payload: "TALK_AGENT",
-                  },
-                  {
-                    type: "postback",
-                    title: "Restart this conversation",
-                    payload: "RESTART_CONVERSATION",
-                  },
-                  {
-                    type: "web_url",
-                    title: "View Facebook Fan Page",
-                    url: "https://www.facebook.com/thesriatelier",
-                    webview_height_ratio: "full",
-                  },
-                ],
+                type: "postback",
+                title: "Talk to an agent",
+                payload: "TALK_AGENT",
               },
-            ],
-            page_level_persistent_menu: [
               {
-                locale: "default",
-                composer_input_disabled: false,
-                call_to_actions: [
-                  {
-                    type: "postback",
-                    title: "Review the page",
-                    payload: "REVIEW",
-                  },
-                ],
+                type: "postback",
+                title: "Restart this conversation",
+                payload: "RESTART_CONVERSATION",
+              },
+              {
+                type: "web_url",
+                title: "View Facebook Fan Page",
+                url: "https://www.facebook.com/thesriatelier",
+                webview_height_ratio: "full",
               },
             ],
           },
