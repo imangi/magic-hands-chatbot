@@ -31,7 +31,7 @@ let handleSetupProfileAPI = () => {
               {
                 type: "web_url",
                 title: "View Facebook Fan Page",
-                url: "https://www.facebook.com/thesriatelier",
+                url: "https://www.facebook.com/thesriatelier/",
                 webview_height_ratio: "full",
               },
             ],
