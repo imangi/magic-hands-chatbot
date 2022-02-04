@@ -123,11 +123,13 @@ let handlePostback = (sender_psid, received_postback) => {
         text: "Pick your language:",
         quick_replies: [
           {
-            content_type: "සිංහල",
+            content_type: "text",
+            title: "සිංහල",
             payload: "SINHALA",
           },
           {
-            content_type: "English",
+            content_type: "text",
+            title: "Engish",
             payload: "ENGLISH",
           },
         ],
