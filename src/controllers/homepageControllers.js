@@ -117,11 +117,36 @@ let handlePostback = (sender_psid, received_postback) => {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === "yes") {
+  switch (payload) {
+    case "GET_STARTED":
+      response = {
+        text: "Pick your language:",
+        quick_replies: [
+          {
+            content_type: "සිංහල",
+            payload: "SINHALA",
+          },
+          {
+            content_type: "English",
+            payload: "ENGLISH",
+          },
+        ],
+      };
+      break;
+    case "yes":
+      response = { text: "Thanks!" };
+      break;
+    case "no":
+      response = { text: "Oops, try sending another image." };
+      break;
+    default:
+      console.log("ran default");
+  }
+  /* if (payload === "yes") {
     response = { text: "Thanks!" };
   } else if (payload === "no") {
     response = { text: "Oops, try sending another image." };
-  }
+  }*/
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 };
