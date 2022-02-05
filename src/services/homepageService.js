@@ -106,7 +106,7 @@ let sendTypingOn = (sender_psid) => {
         {
           uri: URL,
           method: "POST",
-          json: "request_body",
+          json: request_body,
         },
         (err, res, body) => {
           if (!err) {
@@ -124,7 +124,7 @@ let sendTypingOn = (sender_psid) => {
   });
 };
 
-let markMessageRead = () => {
+let markMessageRead = (sender_psid) => {
   return new Promise((resolve, reject) => {
     try {
       let request_body = {
@@ -139,7 +139,7 @@ let markMessageRead = () => {
         {
           uri: URL,
           method: "POST",
-          json: "request_body",
+          json: request_body,
         },
         (err, res, body) => {
           if (!err) {
