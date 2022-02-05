@@ -110,7 +110,7 @@ let handleMessage = (sender_psid, received_message) => {
 };
 
 // Handles messaging_postbacks events
-let handlePostback = (sender_psid, received_postback) => {
+let handlePostback = async (sender_psid, received_postback) => {
   let response;
 
   // Get the payload for the postback
@@ -119,8 +119,9 @@ let handlePostback = (sender_psid, received_postback) => {
   // Set the response based on the postback payload
   switch (payload) {
     case "GET_STARTED":
+      let username = await homepageService.getFacebookUserName(sender_psid);
       response = {
-        text: "Pick your language:",
+        text: `Hey! ${username}. Pick your language:`,
         quick_replies: [
           {
             content_type: "text",
@@ -129,7 +130,7 @@ let handlePostback = (sender_psid, received_postback) => {
           },
           {
             content_type: "text",
-            title: "Engish",
+            title: "English",
             payload: "ENGLISH",
           },
         ],

@@ -63,6 +63,35 @@ let handleSetupProfileAPI = () => {
   });
 };
 
+let getFacebookUserName = (sender_psid) => {
+  return new Promise((resolve, reject) => {
+    try {
+      let URL = `https://graph.facebook.com/${sender_psid}?fields=first_name,last_name,profile_pic&access_token=${PAGE_ACCESS_TOKEN}`;
+
+      request(
+        {
+          uri: URL,
+          method: "GET",
+        },
+        (err, res, body) => {
+          if (!err) {
+            //convert string to json object
+            body = JSON.parse(body);
+            let username = `${body.first_name}`;
+            resolve(username);
+        } else {
+            reject("Unable to send message:" + err);
+        }
+        }
+      );
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
+
 module.exports = {
   handleSetupProfileAPI: handleSetupProfileAPI,
+  getFacebookUserName: getFacebookUserName,
 };
