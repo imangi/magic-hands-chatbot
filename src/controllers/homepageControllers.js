@@ -2,9 +2,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 const request = require("request");
 const homepageService = require("../services/homepageService");
+const chatbotService = require("../services/chatbotService");
 
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 let getHomepage = (req, res) => {
   return res.render("homepage.ejs");
@@ -63,7 +63,7 @@ let postWebhook = (req, res) => {
 };
 
 // Handles messages events
-let handleMessage = (sender_psid, received_message) => {
+let handleMessage = async (sender_psid, received_message) => {
   let response;
 
   // Checks if the message contains text
@@ -106,7 +106,7 @@ let handleMessage = (sender_psid, received_message) => {
   }
 
   // Send the response message
-  callSendAPI(sender_psid, response);
+  await chatbotService.sendMessage(sender_psid, response);
 };
 
 // Handles messaging_postbacks events
@@ -151,38 +151,11 @@ let handlePostback = async (sender_psid, received_postback) => {
     response = { text: "Oops, try sending another image." };
   }*/
   // Send the message to acknowledge the postback
-  callSendAPI(sender_psid, response);
+  await chatbotService.sendMessage(sender_psid, response);
 };
 
 // Sends response messages via the Send API
-let callSendAPI = async (sender_psid, response) => {
-  await homepageService.sendTypingOn(sender_psid);
-  await homepageService.markMessageRead(sender_psid);
-  // Construct the message body
-  let request_body = {
-    recipient: {
-      id: sender_psid,
-    },
-    message: response,
-  };
 
-  // Send the HTTP request to the Messenger Platform
-  request(
-    {
-      uri: "https://graph.facebook.com/v12.0/me/messages",
-      qs: { access_token: PAGE_ACCESS_TOKEN },
-      method: "POST",
-      json: request_body,
-    },
-    (err, res, body) => {
-      if (!err) {
-        console.log("message sent!");
-      } else {
-        console.error("Unable to send message:" + err);
-      }
-    }
-  );
-};
 let handleSetupProfile = async (req, res) => {
   try {
     await homepageService.handleSetupProfileAPI();

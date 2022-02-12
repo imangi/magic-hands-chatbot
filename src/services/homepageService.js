@@ -156,10 +156,43 @@ let markMessageRead = (sender_psid) => {
     }
   });
 };
+let sendTypingOff = (sender_psid) => {
+  return new Promise((resolve, reject) => {
+    try {
+      let request_body = {
+        recipient: {
+          id: sender_psid,
+        },
+        sender_action: "typing_off",
+      };
+      let URL = `https://graph.facebook.com/v12.0/me/messages?access_token=${PAGE_ACCESS_TOKEN}`;
+
+      request(
+        {
+          uri: URL,
+          method: "POST",
+          json: request_body,
+        },
+        (err, res, body) => {
+          if (!err) {
+            console.log(body);
+            resolve("done");
+          } else {
+            reject("Unable to send message:" + err);
+            console.log(err);
+          }
+        }
+      );
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
 
 module.exports = {
   handleSetupProfileAPI: handleSetupProfileAPI,
   getFacebookUserName: getFacebookUserName,
   sendTypingOn: sendTypingOn,
   markMessageRead: markMessageRead,
+  sendTypingOff:sendTypingOff,
 };
