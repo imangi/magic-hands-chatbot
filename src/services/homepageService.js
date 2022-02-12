@@ -194,5 +194,5 @@ module.exports = {
   getFacebookUserName: getFacebookUserName,
   sendTypingOn: sendTypingOn,
   markMessageRead: markMessageRead,
-  sendTypingOff:sendTypingOff,
+  sendTypingOff: sendTypingOff,
 };
