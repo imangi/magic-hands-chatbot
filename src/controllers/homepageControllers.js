@@ -119,22 +119,8 @@ let handlePostback = async (sender_psid, received_postback) => {
   // Set the response based on the postback payload
   switch (payload) {
     case "GET_STARTED":
-      let username = await homepageService.getFacebookUserName(sender_psid);
-      response = {
-        text: `Hey! ${username}. Pick your language:`,
-        quick_replies: [
-          {
-            content_type: "text",
-            title: "සිංහල",
-            payload: "SINHALA",
-          },
-          {
-            content_type: "text",
-            title: "English",
-            payload: "ENGLISH",
-          },
-        ],
-      };
+    case "RESTART_CONVERSATION":
+      await chatbotService.sendWelcomeNewUser(sender_psid);
       break;
     case "yes":
       response = { text: "Thanks!" };
