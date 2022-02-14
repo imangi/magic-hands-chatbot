@@ -65,4 +65,7 @@ const sendMessage = (sender_psid, response) => {
   });
 };
 
-module.exports = { sendMessage: sendMessage };
+module.exports = {
+  sendMessage: sendMessage,
+  sendWelcomeNewUser: sendWelcomeNewUser,
+};
