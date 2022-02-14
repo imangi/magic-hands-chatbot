@@ -6,7 +6,7 @@ const homepageService = require("./homepageService");
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 const sendWelcomeNewUser = (sender_psid, response) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       let username = await homepageService.getFacebookUserName(sender_psid);
       let response = {
