@@ -64,6 +64,28 @@ let postWebhook = (req, res) => {
 
 // Handles messages events
 let handleMessage = async (sender_psid, received_message) => {
+  //check the incoming message is a quick reply?
+  if (
+    received_message &&
+    received_message.quick_reply &&
+    received_message.quick_reply.payload
+  ) {
+    let payload = received_message.quick_reply.payload;
+    if (payload === "SINHALA") {
+      await chatbotService.getStartedSi(sender_psid);
+    } else if (payload === "ENGLISH") {
+      await chatbotService.getStartedEn(sender_psid);
+    } else if (payload === "CATEGORIES_SI") {
+      await chatbotService.sendCategoriesSi(sender_psid);
+    } else if (payload === "CATEGORIES_EN") {
+      await chatbotService.sendCategoriesEn(sender_psid);
+    } else if (payload === "LOOKUP_ORDER_SI") {
+    } else if (payload === "LOOKUP_ORDER_EN") {
+    } else if (payload === "TALK_AGENT_SI") {
+    } else if (payload === "TALK_AGENT_EN") {
+    }
+    return;
+  }
   let response;
 
   // Checks if the message contains text
