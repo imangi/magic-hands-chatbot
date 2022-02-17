@@ -72,17 +72,17 @@ const getStartedEn = (sender_psid) => {
           {
             content_type: "text",
             title: "Categories",
-            payload: "CATEGORIES",
+            payload: "CATEGORIES_EN",
           },
           {
             content_type: "text",
             title: "Lookup Order",
-            payload: "LOOKUP_ORDER",
+            payload: "LOOKUP_ORDER_EN",
           },
           {
             content_type: "text",
             title: "Talk to an agent",
-            payload: "TALK_AGENT",
+            payload: "TALK_AGENT_EN",
           },
         ],
       };
