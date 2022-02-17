@@ -30,7 +30,7 @@ const sendWelcomeNewUser = (sender_psid, response) => {
   });
 };
 
-const getStartedSi = (sender_psid, response) => {
+const getStartedSi = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response1 = {
@@ -66,7 +66,7 @@ const getStartedSi = (sender_psid, response) => {
   });
 };
 
-const getStartedEn = (sender_psid, response) => {
+const getStartedEn = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response1 = {
