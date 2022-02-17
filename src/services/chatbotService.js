@@ -56,7 +56,6 @@ const getStartedSi = (sender_psid, response) => {
           },
         ],
       };
-
       await sendMessage(sender_psid, response1);
       await sendMessage(sender_psid, response2);
       resolve("done");
@@ -73,25 +72,25 @@ const getStartedEn = (sender_psid, response) => {
         text: "Thank You so much! At any time, use the menu below to navigate through the features.",
       };
       let response2 = {
-        "text": "What can I do to help you today?",
-        "quick_replies": [
-            {
-                "content_type": "text",
-                "title": "Categories",
-                "payload": "CATEGORIES",
-            },
-            {
-                "content_type": "text",
-                "title": "Lookup Order",
-                "payload": "LOOKUP_ORDER",
-            },
-            {
-                "content_type": "text",
-                "title": "Talk to an agent",
-                "payload": "TALK_AGENT",
-            },
-        ]
-    };
+        text: "What can I do to help you today?",
+        quick_replies: [
+          {
+            content_type: "text",
+            title: "Categories",
+            payload: "CATEGORIES",
+          },
+          {
+            content_type: "text",
+            title: "Lookup Order",
+            payload: "LOOKUP_ORDER",
+          },
+          {
+            content_type: "text",
+            title: "Talk to an agent",
+            payload: "TALK_AGENT",
+          },
+        ],
+      };
 
       await sendMessage(sender_psid, response1);
       await sendMessage(sender_psid, response2);
@@ -170,5 +169,5 @@ module.exports = {
   sendCategoriesSi: sendCategoriesSi,
   sendCategoriesEn: sendCategoriesEn,
   getStartedEn: getStartedEn,
-  getStartedSi: getStartedSi
+  getStartedSi: getStartedSi,
 };
