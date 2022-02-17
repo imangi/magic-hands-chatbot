@@ -33,11 +33,8 @@ const sendWelcomeNewUser = (sender_psid, response) => {
 const getStartedSi = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let response1 = {
-        text: "ස්තුතියි ඔබට! පහත යෙදුම් අතරින් ඕනෑම යෙදුමක් තෝරාගන්න.",
-      };
-      let response2 = {
-        text: "අප ඔබට සහය විය යුත්තේ කෙසේද?",
+      let response = {
+        text: "ස්තුතියි ඔබට! පහත යෙදුම් අතරින් ඕනෑම යෙදුමක් තෝරාගන්න. අප ඔබට සහය විය යුත්තේ කෙසේද ?",
         quick_replies: [
           {
             content_type: "text",
@@ -56,8 +53,8 @@ const getStartedSi = (sender_psid) => {
           },
         ],
       };
-      await sendMessage(sender_psid, response1);
-      await sendMessage(sender_psid, response2);
+      await sendMessage(sender_psid, response);
+
       resolve("done");
     } catch (e) {
       reject(e);
@@ -69,11 +66,8 @@ const getStartedSi = (sender_psid) => {
 const getStartedEn = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let response1 = {
-        text: "Thank You so much! At any time, use the menu below to navigate through the features.",
-      };
-      let response2 = {
-        text: "What can I do to help you today?",
+      let response = {
+        text: "Thank You so much! At any time, use the menu below to navigate through the features. What can I do to help you today??",
         quick_replies: [
           {
             content_type: "text",
@@ -93,8 +87,7 @@ const getStartedEn = (sender_psid) => {
         ],
       };
 
-      await sendMessage(sender_psid, response1);
-      await sendMessage(sender_psid, response2);
+      await sendMessage(sender_psid, response);
       resolve("done");
     } catch (e) {
       reject(e);
