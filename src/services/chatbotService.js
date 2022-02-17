@@ -105,8 +105,7 @@ const sendMessage = (sender_psid, response) => {
   return new Promise(async (resolve, reject) => {
     try {
       await homepageService.markMessageRead(sender_psid);
-      await homepageService.sendTypingOn(sender_psid);
-      await homepageService.sendTypingOff(sender_psid);
+
       // Construct the message body
       let request_body = {
         recipient: {
