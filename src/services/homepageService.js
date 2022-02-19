@@ -13,10 +13,10 @@ let handleSetupProfileAPI = () => {
         get_started: {
           payload: "GET_STARTED",
         },
-        user_level_persistent_menu: [
+        persistent_menu: [
           {
             locale: "default",
-            composer_input_disabled: true,
+            composer_input_disabled: false,
             call_to_actions: [
               {
                 type: "postback",
@@ -29,19 +29,11 @@ let handleSetupProfileAPI = () => {
                 payload: "RESTART_CONVERSATION",
               },
               {
-                type: "web_url",
-                title: "View Facebook Fan Page",
-                url: "https://www.facebook.com/thesriatelier/",
-                webview_height_ratio: "full",
+                type: "postback",
+                title: "Review our service",
+                payload: "REVIEW",
               },
             ],
-          },
-        ],
-        page_level_persistent_menu: [
-          {
-            type: "postback",
-            title: "Review our service",
-            payload: "Review",
           },
         ],
         whitelisted_domains: ["https://theateliernew.herokuapp.com/"],
