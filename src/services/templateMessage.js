@@ -309,7 +309,7 @@ const sendShowTemplateSi = () => {
         elements: [
           {
             media_type: "video",
-            url: "https://fb.watch/bgdW9_jKxZ/",
+            url: "https://www.facebook.com/thesriatelier/videos/512306883558484",
             buttons: [
               {
                 type: "web_url",
@@ -332,7 +332,7 @@ const sendShowTemplateEn = () => {
         elements: [
           {
             media_type: "video",
-            url: "https://fb.watch/bgdW9_jKxZ/",
+            url: "https://www.facebook.com/thesriatelier/videos/512306883558484",
             buttons: [
               {
                 type: "web_url",
