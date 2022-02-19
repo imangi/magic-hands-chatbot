@@ -13,7 +13,7 @@ let handleSetupProfileAPI = () => {
         get_started: {
           payload: "GET_STARTED",
         },
-        persistent_menu: [
+        user_level_persistent_menu: [
           {
             locale: "default",
             composer_input_disabled: false,
@@ -35,6 +35,13 @@ let handleSetupProfileAPI = () => {
                 webview_height_ratio: "full",
               },
             ],
+          },
+        ],
+        page_level_persistent_menu: [
+          {
+            type: "postback",
+            title: "Review our service",
+            payload: "Review",
           },
         ],
         whitelisted_domains: ["https://theateliernew.herokuapp.com/"],
