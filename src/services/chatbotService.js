@@ -82,7 +82,7 @@ const getStartedEn = (sender_psid) => {
           {
             content_type: "text",
             title: "Talk to an agent",
-            payload: "TALK_AGENT_EN",
+            payload: "TALK_AGENT",
           },
         ],
       };
@@ -197,6 +197,55 @@ const sendLookUpOrderSi = (sender_psid) => {
     }
   });
 };
+const sendReview = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      resolve("done");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const sendShowEn = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = templateMessage.sendShowTemplateEn();
+      await sendMessage(sender_psid, response);
+      resolve("done");
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
+
+const sendShowSi = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = templateMessage.sendShowTemplateSi();
+      await sendMessage(sender_psid, response);
+      resolve("done");
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
+
+
+const sendReview = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = templateMessage.sendReviewTemplate();
+      await sendMessage(sender_psid, response);
+      resolve("done");
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
 
 module.exports = {
   sendMessage: sendMessage,
@@ -209,4 +258,9 @@ module.exports = {
   sendLookUpOrderEn: sendLookUpOrderEn,
   sendTalkAgentSi: sendTalkAgentSi,
   sendTalkAgentEn: sendTalkAgentEn,
+  sendReview: sendReview,
+  sendShowSi: sendShowSi,
+  sendShowEn: sendShowEn,
+  sendReview:sendReview,
+
 };

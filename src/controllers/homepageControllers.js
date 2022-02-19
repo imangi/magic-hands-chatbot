@@ -148,11 +148,26 @@ let handlePostback = async (sender_psid, received_postback) => {
     case "RESTART_CONVERSATION":
       await chatbotService.sendWelcomeNewUser(sender_psid);
       break;
-    case "yes":
-      response = { text: "Thanks!" };
+    case "TALK_AGENT":
+      await chatbotService.sendTalkAgentEn(sender_psid);
       break;
-    case "no":
-      response = { text: "Oops, try sending another image." };
+    case "TALK_AGENT_SI":
+      await chatbotService.sendTalkAgentSi(sender_psid);
+      break;
+    case "LOOKUP_ORDER_EN":
+      await chatbotService.sendLookUpOrderEn(sender_psid);
+      break;
+    case "LOOKUP_ORDER_SI":
+      await chatbotService.sendLookUpOrderSi(sender_psid);
+      break;
+    case "REVIEW":
+      await chatbotService.sendReview(sender_psid);
+      break;
+    case "SHOW_SI":
+      await chatbotService.sendShowSi(sender_psid);
+      break;
+    case "SHOW_EN":
+      await chatbotService.sendShowEn(sender_psid);
       break;
     default:
       console.log("ran default");

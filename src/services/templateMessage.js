@@ -24,7 +24,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show felt crafts",
-                payload: "SHOW_FELT_CRAFTSEN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -47,7 +47,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show beaded Flowers",
-                payload: "SHOW_BEADED_EN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -70,7 +70,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show crochet flowers",
-                payload: "SHOW_CROCHETEN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -93,7 +93,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show Thread Arts",
-                payload: "SHOW_THREAD_EN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -116,7 +116,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show River pebbles arts",
-                payload: "SHOW_PEBBLES_EN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -139,7 +139,7 @@ let sendCategoriesTemplateEn = () => {
               {
                 type: "postback",
                 title: "Show beads works",
-                payload: "SHOW_BROOCH_EN",
+                payload: "SHOW_EN",
               },
             ],
           },
@@ -175,7 +175,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_FELT_CRAFTS_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -198,7 +198,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_BEADED_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -221,7 +221,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_CROCHET_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -244,7 +244,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_THREAD_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -267,7 +267,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_PEBBLES_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -290,7 +290,7 @@ let sendCategoriesTemplateSi = () => {
               {
                 type: "postback",
                 title: "තවදුර අදහස්",
-                payload: "SHOW_BROOCH_SI",
+                payload: "SHOW_SI",
               },
             ],
           },
@@ -300,7 +300,96 @@ let sendCategoriesTemplateSi = () => {
   };
 };
 
+const sendShowTemplateSi = () => {
+  return {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "video",
+            url: "https://fb.watch/bgao7JIn6p/",
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/groups/259100661791058",
+                title: "අපගේ ගෘපය වෙත",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+};
+const sendShowTemplateEn = () => {
+  return {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "media",
+        elements: [
+          {
+            media_type: "video",
+            url: "https://fb.watch/bgao7JIn6p/",
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/groups/259100661791058",
+                title: "Join Group",
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+};
+
+const sendReviewTemplate = () => {
+  return {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "customer_feedback",
+        title: "Rate your experience with Magic Hands.", // Business needs to define.
+        subtitle:
+          "Let Magic Hands know how they are doing by answering two questions", // Business needs to define.
+        button_title: "Rate Experience", // Business needs to define.
+        feedback_screens: [
+          {
+            questions: [
+              {
+                id: "hauydmns8", // Unique id for question that business sets
+                type: "csat",
+                title: "How would you rate your experience with Magic Hands?", // Optional. If business does not define, we show standard text. Standard text based on question type ("csat", "nps", "ces" >>> "text")
+                score_label: "neg_pos", // Optional
+                score_option: "five_stars", // Optional
+                // Optional. Inherits the title and id from the previous question on the same page.  Only free-from input is allowed. No other title will show.
+                follow_up: {
+                  type: "free_form",
+                  placeholder: "Give additional feedback", // Optional
+                },
+              },
+            ],
+          },
+        ],
+        business_privacy: {
+          url: "https://www.example.com",
+        },
+        expires_in_days: 7, // Optional, default 1 day, business defines 1-7 days
+      },
+    },
+  };
+};
+
+
+
 module.exports = {
   sendCategoriesTemplateEn: sendCategoriesTemplateEn,
   sendCategoriesTemplateSi: sendCategoriesTemplateSi,
+  sendShowTemplateEn: sendShowTemplateEn,
+  sendShowTemplateSi: sendShowTemplateSi,
+  sendReviewTemplate: sendReviewTemplate, 
 };
