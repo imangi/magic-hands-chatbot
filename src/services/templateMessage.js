@@ -74,6 +74,75 @@ let sendCategoriesTemplateEn = () => {
               },
             ],
           },
+          {
+            title: "Thread Arts",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/237549418_372314817778179_677947715148601571_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeErbBPahOU_zH06InEC4Of3NE3PatWwIjg0Tc9q1bAiOG0OZkbhuyqI_eB5bJC4NBeyzeSL9c4c_1QCa624OL0Z&_nc_ohc=rnfEjwjBIYYAX_l9cKA&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT8ml3VwHBG1X__DMga8r4J8F4uoVLTPDm45Gq-o2cTcPw&oe=6215AEA5",
+            subtitle: "DIY Thread arts ideas and inspirations",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "View on Page",
+              },
+              {
+                type: "postback",
+                title: "Show Thread Arts",
+                payload: "SHOW_THREAD_EN",
+              },
+            ],
+          },
+          {
+            title: "River Pebbles arts",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/236891927_370824257927235_6226573400997273994_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeEmHhPb57HctrfE0jIbTcYc2I1FVcOEtkzYjUVVw4S2THyS2xWP4OvYusMZji0DfhEXdQM8HVt1yql_uYYPCIum&_nc_ohc=VMwPWa8RFb4AX8p4ANf&tn=mV95uOjsVNPsfYyZ&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT_pX_YAG0fWyt65pq68IqZT4-nNqBQtK9qDPUlNnsQy7w&oe=62156098",
+            subtitle: "DIY River Pebbles Arts ideas and inspirations",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "View on Page",
+              },
+              {
+                type: "postback",
+                title: "Show River pebbles arts",
+                payload: "SHOW_PEBBLES_EN",
+              },
+            ],
+          },
+          {
+            title: "Beads works",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/236971524_369587931384201_6548188776295171332_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeGMOicj3LbuJzVjVxRkN-Xm__zgavs6qiv__OBq-zqqK27ps2ylyn8pdTclpJyhNU3Jl0PhtyYFmO4K_RNm6kg1&_nc_ohc=gzXr9m89Mf0AX8HOWr6&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT_lcq_7X6rD9xPbad-JfiHAXpqYd_w08D8-mLPD_CAMxw&oe=62155874",
+            subtitle: "DIY beads works ideas and inspirations",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "View on Page",
+              },
+              {
+                type: "postback",
+                title: "Show beads works",
+                payload: "SHOW_BROOCH_EN",
+              },
+            ],
+          },
         ],
       },
     },
@@ -156,6 +225,75 @@ let sendCategoriesTemplateSi = () => {
               },
             ],
           },
+          {
+            title: "ත්‍රෙඩ් නිර්මාණ",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/237549418_372314817778179_677947715148601571_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeErbBPahOU_zH06InEC4Of3NE3PatWwIjg0Tc9q1bAiOG0OZkbhuyqI_eB5bJC4NBeyzeSL9c4c_1QCa624OL0Z&_nc_ohc=rnfEjwjBIYYAX_l9cKA&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT8ml3VwHBG1X__DMga8r4J8F4uoVLTPDm45Gq-o2cTcPw&oe=6215AEA5",
+            subtitle: "ත්‍රෙඩ් නිර්මාණ සහ නිර්මාර්ණාත්මක අදහස්",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "ෆේස්බූක් පිටුව වෙත",
+              },
+              {
+                type: "postback",
+                title: "තවදුර අදහස්",
+                payload: "SHOW_THREAD_SI",
+              },
+            ],
+          },
+          {
+            title: "රිවර් පෙබල්ස් නිර්මාණ",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/236891927_370824257927235_6226573400997273994_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeEmHhPb57HctrfE0jIbTcYc2I1FVcOEtkzYjUVVw4S2THyS2xWP4OvYusMZji0DfhEXdQM8HVt1yql_uYYPCIum&_nc_ohc=VMwPWa8RFb4AX8p4ANf&tn=mV95uOjsVNPsfYyZ&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT_pX_YAG0fWyt65pq68IqZT4-nNqBQtK9qDPUlNnsQy7w&oe=62156098",
+            subtitle: "රිවර් පෙබල්ස් නිර්මාණ සහ නිර්මාර්ණාත්මක අදහස්",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "ෆේස්බූක් පිටුව වෙත",
+              },
+              {
+                type: "postback",
+                title: "තවදුර අදහස්",
+                payload: "SHOW_PEBBLES_SI",
+              },
+            ],
+          },
+          {
+            title: "පබළු නිර්මාණ",
+            image_url:
+              "https://scontent.fcmb10-1.fna.fbcdn.net/v/t39.30808-6/236971524_369587931384201_6548188776295171332_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeGMOicj3LbuJzVjVxRkN-Xm__zgavs6qiv__OBq-zqqK27ps2ylyn8pdTclpJyhNU3Jl0PhtyYFmO4K_RNm6kg1&_nc_ohc=gzXr9m89Mf0AX8HOWr6&_nc_ht=scontent.fcmb10-1.fna&oh=00_AT_lcq_7X6rD9xPbad-JfiHAXpqYd_w08D8-mLPD_CAMxw&oe=62155874",
+            subtitle: "පබළු නිර්මාණ සහ නිර්මාර්ණාත්මක අදහස්",
+            default_action: {
+              type: "web_url",
+              url: "https://www.facebook.com/thesriatelier",
+              webview_height_ratio: "tall",
+            },
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.facebook.com/thesriatelier",
+                title: "ෆේස්බූක් පිටුව වෙත",
+              },
+              {
+                type: "postback",
+                title: "තවදුර අදහස්",
+                payload: "SHOW_BROOCH_SI",
+              },
+            ],
+          },
         ],
       },
     },
@@ -163,6 +301,6 @@ let sendCategoriesTemplateSi = () => {
 };
 
 module.exports = {
-    sendCategoriesTemplateEn:sendCategoriesTemplateEn,
-    sendCategoriesTemplateSi:sendCategoriesTemplateSi
-}
+  sendCategoriesTemplateEn: sendCategoriesTemplateEn,
+  sendCategoriesTemplateSi: sendCategoriesTemplateSi,
+};

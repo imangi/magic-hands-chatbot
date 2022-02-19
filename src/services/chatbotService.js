@@ -146,7 +146,7 @@ const sendCategoriesSi = (sender_psid) => {
 };
 
 const sendCategoriesEn = (sender_psid) => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       let response = templateMessage.sendCategoriesTemplateEn();
       await sendMessage(sender_psid, response);
@@ -158,6 +158,46 @@ const sendCategoriesEn = (sender_psid) => {
   });
 };
 
+const sendTalkAgentSi = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      resolve("done");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const sendTalkAgentEn = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      resolve("done");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const sendLookUpOrderEn = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      resolve("done");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+const sendLookUpOrderSi = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      resolve("done");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   sendMessage: sendMessage,
   sendWelcomeNewUser: sendWelcomeNewUser,
@@ -165,4 +205,8 @@ module.exports = {
   sendCategoriesEn: sendCategoriesEn,
   getStartedEn: getStartedEn,
   getStartedSi: getStartedSi,
+  sendLookUpOrderSi: sendLookUpOrderSi,
+  sendLookUpOrderEn: sendLookUpOrderEn,
+  sendTalkAgentSi: sendTalkAgentSi,
+  sendTalkAgentEn: sendTalkAgentEn,
 };

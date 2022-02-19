@@ -80,9 +80,13 @@ let handleMessage = async (sender_psid, received_message) => {
     } else if (payload === "CATEGORIES_EN") {
       await chatbotService.sendCategoriesEn(sender_psid);
     } else if (payload === "LOOKUP_ORDER_SI") {
+      await chatbotService.sendLookUpOrderSi(sender_psid);
     } else if (payload === "LOOKUP_ORDER_EN") {
+      await chatbotService.sendLookUpOrderEn(sender_psid);
     } else if (payload === "TALK_AGENT_SI") {
+      await chatbotService.sendTalkAgentSi(sender_psid);
     } else if (payload === "TALK_AGENT_EN") {
+      await chatbotService.sendTalkAgentEn(sender_psid);
     }
     return;
   }
@@ -158,8 +162,6 @@ let handlePostback = async (sender_psid, received_postback) => {
   } else if (payload === "no") {
     response = { text: "Oops, try sending another image." };
   }*/
-  // Send the message to acknowledge the postback
-  await chatbotService.sendMessage(sender_psid, response);
 };
 
 // Sends response messages via the Send API
