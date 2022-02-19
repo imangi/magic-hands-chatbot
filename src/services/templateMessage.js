@@ -376,7 +376,7 @@ const sendReviewTemplate = () => {
           },
         ],
         business_privacy: {
-          url: "https://www.example.com",
+          url: "https://theateliernew.herokuapp.com/",
         },
         expires_in_days: 7, // Optional, default 1 day, business defines 1-7 days
       },
@@ -384,12 +384,10 @@ const sendReviewTemplate = () => {
   };
 };
 
-
-
 module.exports = {
   sendCategoriesTemplateEn: sendCategoriesTemplateEn,
   sendCategoriesTemplateSi: sendCategoriesTemplateSi,
   sendShowTemplateEn: sendShowTemplateEn,
   sendShowTemplateSi: sendShowTemplateSi,
-  sendReviewTemplate: sendReviewTemplate, 
+  sendReviewTemplate: sendReviewTemplate,
 };

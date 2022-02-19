@@ -197,15 +197,6 @@ const sendLookUpOrderSi = (sender_psid) => {
     }
   });
 };
-const sendReview = (sender_psid) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      resolve("done");
-    } catch (e) {
-      reject(e);
-    }
-  });
-};
 
 const sendShowEn = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
@@ -233,7 +224,6 @@ const sendShowSi = (sender_psid) => {
   });
 };
 
-
 const sendReview = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -258,9 +248,7 @@ module.exports = {
   sendLookUpOrderEn: sendLookUpOrderEn,
   sendTalkAgentSi: sendTalkAgentSi,
   sendTalkAgentEn: sendTalkAgentEn,
-  sendReview: sendReview,
   sendShowSi: sendShowSi,
   sendShowEn: sendShowEn,
-  sendReview:sendReview,
-
+  sendReview: sendReview,
 };
