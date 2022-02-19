@@ -309,7 +309,7 @@ const sendShowTemplateSi = () => {
         elements: [
           {
             media_type: "video",
-            url: "https://fb.watch/bgao7JIn6p/",
+            url: "https://fb.watch/bgdW9_jKxZ/",
             buttons: [
               {
                 type: "web_url",
@@ -332,7 +332,7 @@ const sendShowTemplateEn = () => {
         elements: [
           {
             media_type: "video",
-            url: "https://fb.watch/bgao7JIn6p/",
+            url: "https://fb.watch/bgdW9_jKxZ/",
             buttons: [
               {
                 type: "web_url",
