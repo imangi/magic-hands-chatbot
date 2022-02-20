@@ -399,7 +399,7 @@ const sendLookUpOrderSi = () => {
           {
             type: "postback",
             title: "ප්‍රධාන මෙනුවට",
-            payload: "BACK_TO_MAIN_MENU_SI",
+            payload: "BACK_TO_MAIN_SI",
           },
         ],
       },
@@ -429,7 +429,7 @@ const sendLookUpOrderEn = () => {
     },
   };
 };
-const backToMainMenuSi =() => {
+const backToMainMenuSi = () => {
   return {
     text: "ස්තුතියි ඔබට! පහත යෙදුම් අතරින් ඕනෑම යෙදුමක් තෝරාගන්න. අප ඔබට සහය විය යුත්තේ කෙසේද ?",
     quick_replies: [
@@ -449,11 +449,11 @@ const backToMainMenuSi =() => {
         payload: "TALK_AGENT_SI",
       },
     ],
-}
-}
+  };
+};
 
-const backToMainMenuEn =() => {
- return  {
+const backToMainMenuEn = () => {
+  return {
     text: "Thank You so much! At any time, use the menu below to navigate through the features. What can I do to help you today??",
     quick_replies: [
       {
@@ -473,7 +473,7 @@ const backToMainMenuEn =() => {
       },
     ],
   };
-}
+};
 
 module.exports = {
   sendCategoriesTemplateEn: sendCategoriesTemplateEn,
