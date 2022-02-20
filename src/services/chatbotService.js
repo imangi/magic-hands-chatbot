@@ -181,6 +181,8 @@ const sendTalkAgentEn = (sender_psid) => {
 const sendLookUpOrderEn = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
+      let response = templateMessage.sendLookUpOrderEn(sender_psid);
+      await sendMessage(sender_psid, response);
       resolve("done");
     } catch (e) {
       reject(e);
@@ -191,6 +193,8 @@ const sendLookUpOrderEn = (sender_psid) => {
 const sendLookUpOrderSi = (sender_psid) => {
   return new Promise(async (resolve, reject) => {
     try {
+      let response = templateMessage.sendLookUpOrderSi(sender_psid);
+      await sendMessage(sender_psid, response);
       resolve("done");
     } catch (e) {
       reject(e);
@@ -236,6 +240,31 @@ const sendReview = (sender_psid) => {
     }
   });
 };
+const sendBackToMainMenuSi = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = templateMessage.backToMainMenuSi();
+      await sendMessage(sender_psid, response);
+      resolve("done");
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
+
+const sendBackToMainMenuEn = (sender_psid) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = templateMessage.backToMainMenuEn();
+      await sendMessage(sender_psid, response);
+      resolve("done");
+    } catch (e) {
+      reject(e);
+      console.log(e);
+    }
+  });
+};
 
 module.exports = {
   sendMessage: sendMessage,
@@ -251,4 +280,6 @@ module.exports = {
   sendShowSi: sendShowSi,
   sendShowEn: sendShowEn,
   sendReview: sendReview,
+  sendBackToMainMenuEn: sendBackToMainMenuEn,
+  sendBackToMainMenuSi: sendBackToMainMenuSi,
 };

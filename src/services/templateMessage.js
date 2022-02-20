@@ -383,6 +383,97 @@ const sendReviewTemplate = () => {
     },
   };
 };
+const sendLookUpOrderSi = () => {
+  return {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "button",
+        text: "ඔබගේ ඇනවුම පරික්ෂා කිරිඉම සදහා පහල යෙදවුම් භාවිතා කරන්න",
+        buttons: [
+          {
+            type: "postback",
+            title: "ඇනවුම් පරීක්ෂාවට",
+            payload: "SET_INFO_SI",
+          },
+          {
+            type: "postback",
+            title: "ප්‍රධාන මෙනුවට",
+            payload: "BACK_TO_MAIN_MENU_SI",
+          },
+        ],
+      },
+    },
+  };
+};
+const sendLookUpOrderEn = () => {
+  return {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "button",
+        text: "OK. Let's set info about your order,",
+        buttons: [
+          {
+            type: "postback",
+            title: "Set Info",
+            payload: "SET_INFO",
+          },
+          {
+            type: "postback",
+            title: "Main menu",
+            payload: "BACK_TO_MAIN_MENU",
+          },
+        ],
+      },
+    },
+  };
+};
+const backToMainMenuSi =() => {
+  return {
+    text: "ස්තුතියි ඔබට! පහත යෙදුම් අතරින් ඕනෑම යෙදුමක් තෝරාගන්න. අප ඔබට සහය විය යුත්තේ කෙසේද ?",
+    quick_replies: [
+      {
+        content_type: "text",
+        title: "නිෂ්පාදන කාණ්ඩ",
+        payload: "CATEGORIES_SI",
+      },
+      {
+        content_type: "text",
+        title: "ඇනවුම් පරීක්ෂණය",
+        payload: "LOOKUP_ORDER_SI",
+      },
+      {
+        content_type: "text",
+        title: "නියෝජිත සහය",
+        payload: "TALK_AGENT_SI",
+      },
+    ],
+}
+}
+
+const backToMainMenuEn =() => {
+ return  {
+    text: "Thank You so much! At any time, use the menu below to navigate through the features. What can I do to help you today??",
+    quick_replies: [
+      {
+        content_type: "text",
+        title: "Categories",
+        payload: "CATEGORIES_EN",
+      },
+      {
+        content_type: "text",
+        title: "Lookup Order",
+        payload: "LOOKUP_ORDER_EN",
+      },
+      {
+        content_type: "text",
+        title: "Talk to an agent",
+        payload: "TALK_AGENT",
+      },
+    ],
+  };
+}
 
 module.exports = {
   sendCategoriesTemplateEn: sendCategoriesTemplateEn,
@@ -390,4 +481,8 @@ module.exports = {
   sendShowTemplateEn: sendShowTemplateEn,
   sendShowTemplateSi: sendShowTemplateSi,
   sendReviewTemplate: sendReviewTemplate,
+  sendLookUpOrderEn: sendLookUpOrderEn,
+  sendLookUpOrderSi: sendLookUpOrderSi,
+  backToMainMenuSi: backToMainMenuSi,
+  backToMainMenuEn: backToMainMenuEn,
 };

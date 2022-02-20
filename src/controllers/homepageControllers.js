@@ -148,17 +148,20 @@ let handlePostback = async (sender_psid, received_postback) => {
     case "RESTART_CONVERSATION":
       await chatbotService.sendWelcomeNewUser(sender_psid);
       break;
-    case "TALK_AGENT":
-      await chatbotService.sendTalkAgentEn(sender_psid);
-      break;
-    case "TALK_AGENT_SI":
+   // case "TALK_AGENT":
+    //  await chatbotService.sendTalkAgentEn(sender_psid);
+    //  break;
+   /* case "SET_INFO_SI":
       await chatbotService.sendTalkAgentSi(sender_psid);
       break;
-    case "LOOKUP_ORDER_EN":
+    case "SET_INFO":
       await chatbotService.sendLookUpOrderEn(sender_psid);
+      break;*/
+    case "BACK_TO_MAIN_MENU":
+      await chatbotService.sendBackToMainMenuEn(sender_psid);
       break;
-    case "LOOKUP_ORDER_SI":
-      await chatbotService.sendLookUpOrderSi(sender_psid);
+    case "BACK_TO_MAIN_SI":
+      await chatbotService.sendBackToMainMenuSi(sender_psid);
       break;
     case "REVIEW":
       await chatbotService.sendReview(sender_psid);
@@ -169,7 +172,6 @@ let handlePostback = async (sender_psid, received_postback) => {
     case "SHOW_EN":
       await chatbotService.sendShowEn(sender_psid);
       break;
-    default:
       console.log("ran default");
   }
   /* if (payload === "yes") {
