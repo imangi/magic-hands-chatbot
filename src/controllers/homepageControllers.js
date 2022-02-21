@@ -148,10 +148,10 @@ let handlePostback = async (sender_psid, received_postback) => {
     case "RESTART_CONVERSATION":
       await chatbotService.sendWelcomeNewUser(sender_psid);
       break;
-   // case "TALK_AGENT":
+    // case "TALK_AGENT":
     //  await chatbotService.sendTalkAgentEn(sender_psid);
     //  break;
-   /* case "SET_INFO_SI":
+    /* case "SET_INFO_SI":
       await chatbotService.sendTalkAgentSi(sender_psid);
       break;
     case "SET_INFO":
@@ -195,6 +195,9 @@ let handleSetupProfile = async (req, res) => {
 let getSetUpProfilePage = (req, res) => {
   return res.render("profile.ejs");
 };
+const getInfoOrderPage = (req, res) => {
+  return res.render("infoOrder.ejs");
+};
 
 module.exports = {
   getHomepage: getHomepage,
@@ -202,4 +205,5 @@ module.exports = {
   postWebhook: postWebhook,
   handleSetupProfile: handleSetupProfile,
   getSetUpProfilePage: getSetUpProfilePage,
+  getInfoOrderPage: getInfoOrderPage,
 };

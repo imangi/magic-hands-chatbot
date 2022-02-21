@@ -1,0 +1,30 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+header {
+  min-height: 50px;
+  background: lightcyan;
+}
+footer {
+  background: rgb(162, 225, 245);
+}
+
+/* Trick: */
+body {
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
