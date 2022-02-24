@@ -198,6 +198,11 @@ let getSetUpProfilePage = (req, res) => {
 const getInfoOrderPage = (req, res) => {
   return res.render("infoOrder.ejs");
 };
+const setInfoOrder = (req, res) => {
+  return res.status(200).json({
+    message: "ok",
+  });
+};
 
 module.exports = {
   getHomepage: getHomepage,
@@ -206,4 +211,5 @@ module.exports = {
   handleSetupProfile: handleSetupProfile,
   getSetUpProfilePage: getSetUpProfilePage,
   getInfoOrderPage: getInfoOrderPage,
+  setInfoOrder: setInfoOrder,
 };

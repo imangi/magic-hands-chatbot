@@ -22,6 +22,10 @@ body::after {
   height: 50px; /* Set same as footer's height */
 }
 
+.fix-height {
+  flex: 3;
+}
+
 footer {
   position: absolute;
   bottom: 0;
