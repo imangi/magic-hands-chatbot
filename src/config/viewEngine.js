@@ -6,11 +6,11 @@ const path = require("path");
 let configViewEngine = (app) => {
   app.use(
     "/images",
-    express.static(path.join(__dirname, "/src/public/images"))
+    express.static(path.join(__dirname, "./src/public/images"))
   );
-  app.use("/js", express.static(path.join(__dirname, "/src/public/js")));
-  app.use("/css", express.static(path.join(__dirname, "/src/public/css")));
+  app.use("/js", express.static(path.join(__dirname, "./src/public/js")));
+  app.use("/css", express.static(path.join(__dirname, "./src/public/css")));
   app.set("viewEngine", "ejs");
-  app.set("views", "/src/views");
+  app.set("views", "./src/views");
 };
 module.exports = configViewEngine;
