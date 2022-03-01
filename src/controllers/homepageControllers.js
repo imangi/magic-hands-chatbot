@@ -64,6 +64,32 @@ let postWebhook = (req, res) => {
 
 // Handles messages events
 let handleMessage = async (sender_psid, received_message) => {
+  //check the incoming message is a quick reply?
+  if (
+    received_message &&
+    received_message.quick_reply &&
+    received_message.quick_reply.payload
+  ) {
+    let payload = received_message.quick_reply.payload;
+    if (payload === "SINHALA") {
+      await chatbotService.getStartedSi(sender_psid);
+    } else if (payload === "ENGLISH") {
+      await chatbotService.getStartedEn(sender_psid);
+    } else if (payload === "CATEGORIES_SI") {
+      await chatbotService.sendCategoriesSi(sender_psid);
+    } else if (payload === "CATEGORIES_EN") {
+      await chatbotService.sendCategoriesEn(sender_psid);
+    } else if (payload === "LOOKUP_ORDER_SI") {
+      await chatbotService.sendLookUpOrderSi(sender_psid);
+    } else if (payload === "LOOKUP_ORDER_EN") {
+      await chatbotService.sendLookUpOrderEn(sender_psid);
+    } else if (payload === "TALK_AGENT_SI") {
+      await chatbotService.sendTalkAgentSi(sender_psid);
+    } else if (payload === "TALK_AGENT_EN") {
+      await chatbotService.sendTalkAgentEn(sender_psid);
+    }
+    return;
+  }
   let response;
 
   // Checks if the message contains text
@@ -119,30 +145,33 @@ let handlePostback = async (sender_psid, received_postback) => {
   // Set the response based on the postback payload
   switch (payload) {
     case "GET_STARTED":
-      let username = await homepageService.getFacebookUserName(sender_psid);
-      response = {
-        text: `Hey! ${username}. Pick your language:`,
-        quick_replies: [
-          {
-            content_type: "text",
-            title: "සිංහල",
-            payload: "SINHALA",
-          },
-          {
-            content_type: "text",
-            title: "English",
-            payload: "ENGLISH",
-          },
-        ],
-      };
+    case "RESTART_CONVERSATION":
+      await chatbotService.sendWelcomeNewUser(sender_psid);
       break;
-    case "yes":
-      response = { text: "Thanks!" };
+    // case "TALK_AGENT":
+    //  await chatbotService.sendTalkAgentEn(sender_psid);
+    //  break;
+    /* case "SET_INFO_SI":
+      await chatbotService.sendTalkAgentSi(sender_psid);
       break;
-    case "no":
-      response = { text: "Oops, try sending another image." };
+    case "SET_INFO":
+      await chatbotService.sendLookUpOrderEn(sender_psid);
+      break;*/
+    case "BACK_TO_MAIN_MENU":
+      await chatbotService.sendBackToMainMenuEn(sender_psid);
       break;
-    default:
+    case "BACK_TO_MAIN_SI":
+      await chatbotService.sendBackToMainMenuSi(sender_psid);
+      break;
+    case "REVIEW":
+      await chatbotService.sendReview(sender_psid);
+      break;
+    case "SHOW_SI":
+      await chatbotService.sendShowSi(sender_psid);
+      break;
+    case "SHOW_EN":
+      await chatbotService.sendShowEn(sender_psid);
+      break;
       console.log("ran default");
   }
   /* if (payload === "yes") {
@@ -150,8 +179,6 @@ let handlePostback = async (sender_psid, received_postback) => {
   } else if (payload === "no") {
     response = { text: "Oops, try sending another image." };
   }*/
-  // Send the message to acknowledge the postback
-  await chatbotService.sendMessage(sender_psid, response);
 };
 
 // Sends response messages via the Send API
@@ -168,6 +195,17 @@ let handleSetupProfile = async (req, res) => {
 let getSetUpProfilePage = (req, res) => {
   return res.render("profile.ejs");
 };
+const getInfoOrderPage = (req, res) => {
+  let facebookAppId = process.env.APP_ID;
+  return res.render("infoOrder.ejs", {
+    facebookAppId: facebookAppId,
+  });
+};
+const setInfoOrder = (req, res) => {
+  return res.status(200).json({
+    message: "ok",
+  });
+};
 
 module.exports = {
   getHomepage: getHomepage,
@@ -175,4 +213,6 @@ module.exports = {
   postWebhook: postWebhook,
   handleSetupProfile: handleSetupProfile,
   getSetUpProfilePage: getSetUpProfilePage,
+  getInfoOrderPage: getInfoOrderPage,
+  setInfoOrder: setInfoOrder,
 };
