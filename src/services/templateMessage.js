@@ -389,12 +389,14 @@ const sendLookUpOrderSi = () => {
       type: "template",
       payload: {
         template_type: "button",
-        text: "ඔබගේ ඇනවුම පරික්ෂා කිරිඉම සදහා පහල යෙදවුම් භාවිතා කරන්න",
+        text: "ඔබගේ ඇනවුම පරික්ෂා කිරිම සදහා පහල යෙදවුම් භාවිතා කරන්න",
         buttons: [
           {
-            type: "postback",
+            type: "web_url",
+            url: `${process.env.URL_WEB_VIEW_ORDER}`,
             title: "ඇනවුම් පරීක්ෂාවට",
-            payload: "SET_INFO_SI",
+            webview_height_ratio: "tall",
+            messenger_extensions: true, //false: open the webview in new tab
           },
           {
             type: "postback",
@@ -415,9 +417,11 @@ const sendLookUpOrderEn = () => {
         text: "OK. Let's set info about your order,",
         buttons: [
           {
-            type: "postback",
-            title: "Set Info",
-            payload: "SET_INFO",
+            type: "web_url",
+            url: `${process.env.URL_WEB_VIEW_ORDER}`,
+            title: "Set info",
+            webview_height_ratio: "tall",
+            messenger_extensions: true, //false: open the webview in new tab
           },
           {
             type: "postback",

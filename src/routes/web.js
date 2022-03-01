@@ -11,6 +11,10 @@ const initWebRoutes = (app) => {
   router.get("/set-up-profile", homepageController.getSetUpProfilePage);
   router.get("/info-order", homepageController.getInfoOrderPage);
   router.post("/set-info-order", homepageController.setInfoOrder);
+  router.get("/*", function (req, res, next) {
+    res.setHeader("Last-Modified", new Date().toUTCString());
+    next();
+  });
   return app.use("/", router);
 };
 

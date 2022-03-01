@@ -16,7 +16,7 @@
    
    
     <link rel="stylesheet" href="/css/style.css" />
-    
+   
   </head>
   <body>
   <div>
@@ -24,7 +24,9 @@
   </div>
   <div class="container">
       <div class="col-12">
+            
     <form-group >
+      <input type="text" id="psid" hidden></Input>  
       <label for="name">Name (නම): </label>
       <br/>
 
@@ -65,7 +67,12 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      let facebookAppId = "<% facebookAppId %>"
+      </script>
     <script src="/js/order.js" >    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
   </body>
 </html>
