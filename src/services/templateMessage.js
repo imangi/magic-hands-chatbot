@@ -395,7 +395,7 @@ const sendLookUpOrderSi = () => {
             type: "web_url",
             url: `${process.env.URL_WEB_VIEW_ORDER}`,
             title: "ඇනවුම් පරීක්ෂාවට",
-            webview_height_ratio: "tall",
+            webview_height_ratio: "full",
             messenger_extensions: true, //false: open the webview in new tab
           },
           {
@@ -420,7 +420,7 @@ const sendLookUpOrderEn = () => {
             type: "web_url",
             url: `${process.env.URL_WEB_VIEW_ORDER}`,
             title: "Set info",
-            webview_height_ratio: "tall",
+            webview_height_ratio: "full",
             messenger_extensions: true, //false: open the webview in new tab
           },
           {
